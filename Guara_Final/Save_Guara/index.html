@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/scrollAnimacao.css">
+    <link rel="icon" href="assets/img/icone.png">
+    <title>Save-Guará🧡</title>
+</head>
+
+<body>
+
+    <nav class="navBar">
+        <h1>Save-<span class="guara">Guará</span></h1>
+        <a href="#" class="icone-guara"><img src="assets/img/icone.png" alt="icone do lobo-guará"></a>
+
+        <div class="dp-menu">
+            <!-- titulo dropdown -->
+            <h1>Menu</h1>
+            <div class="triangulo"></div>
+            <!-- Itens do dropdown -->
+            <div class="dropdown-items">
+                <div class="item-home">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#home">
+                        Home
+                    </a>
+                </div>
+                <div class="item-habitat">
+                    <i class="fa-solid fa-tree"></i>
+                    <a href="#mapa">
+                        Habitat
+                    </a>
+                </div>
+                <div class="item-lobo">
+                    <i class="fa-solid fa-paw"></i>
+                    <a href="#loboguara">
+                        Lobo-Guará
+                    </a>
+                </div>
+                <div class="item-doacao">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <a href="#form-doacao">
+                        Doação
+                    </a>
+        </div>
+    </nav>
+
+
+    <div class="home-guara" id="home">
+        <li>Ajude-nos a salvar vidas!</li>
+        <li></li>
+        <li>Somos uma Instituição que busca combater a extinção do lobo-guara, um animal importante para a presenvação do Cerrado e manutenção de sua flora, além de ser responsavel pelo controle populacional dos animais em seu território. </li>
+        <button class="btn-doacao"><a href='#form-doacao'>Ajude Guará</a></button>
+    </div>
+
+
+    <div class="mapa reveal" id="mapa">
+        <div class="habitat">
+            <img src="assets/img/mapa-branco.png" alt="">
+            <div class="overlay-mapa"><a href="https://pt.wikipedia.org/wiki/Lobo-guará" target="_blank">Habitat do<br>lobo-guara</a></div>
+        </div>
+        <div id="txt-mapa">
+       
+        <li>Ameaçado principalmente por causa da destruição do cerrado para ampliação da agricultura, dos
+            atropelamentos, caça e doenças advindas dos cães domésticos, o Lobo-Guará conhecido como semeador de
+            árvores, dispensador de sementes está entrando em extinção. Os biólogos afirmam que é fundamental que as
+            pessoas entendam que eles precisam ser preservados. Esses animais trazem benefícios importantes para o
+            meio ambiente.</li>
+            <br>
+
+        <li>O Cerrado é responsavel pelo equilíbrio hidrológico. Isso ocorre porque  mesmo com períodos de deficiência hídrica, as águas das chuvas penetram seu solo e abastecem aquíferos e nascentes.
+                Fazendo com que solo da região seja rico em água, sendo comparado a uma “caixa d’água” para todo o continente.  Nele há grandes reservatórios subterrâneos, dos quais se destaca parte do Aquífero Guarani. Sendo o bioma responsável por fornecer água para
+                 diversas regiões do país, porque é nele que nascem rios de diferentes bacias hidrográficas.</li>
+                 <br>
+            <h1>
+                Preservar o lobo-guará é preservar o Cerrado!</h1>
+
+                </div>
+    </div>
+
+
+    <section>
+        <div class="sobre-lobo reveal" id="loboguara">
+            <div id="video">
+                <li>Confira um vídeo informativo sobre o lobo-guará</li>
+                <iframe width="1100" height="600" 
+                src="https://www.youtube.com/embed/1yxMkYLoSOM" 
+                title="GLOBO RURAL - Perfil do lobo-guará desfaz imagem negativa do 'semeador do cerrado'" 
+                frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; 
+                picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <img src="assets/img/lobo-guara1.png" alt="">
+        </div>
+    </section>
+
+    <section>
+        <div class="form-doacao reveal" id="form-doacao">
+            <img src="assets/img/lobo-guara2.png" alt="" id="img_form">
+            <div class="txt_doacao">
+                <h1>Salve o Lobo Guará</h1>
+                <h2>A sua contribuição pode salvar vidas</h2>
+            </div>
+            
+            <section id="form">
+                <form action="https://formsubmit.co/vitorh.472975@gmail.com" method="POST">
+                    <!--E-mail onde são enviado os dados vitorh.472975@gmail.com -->
+                    <div class="titulo_doacao">
+                        <h1>Doação</h1>
+                        <h2>Dados para contato</h2>
+                    </div>
+                    <div class="form-inputs">
+                        <div class="row">
+                            <label for="">Nome e Sobrenome</label>
+                            <input type="text" name="name" id="nome" placeholder="Digite o nome e sobrenome" required>
+                        </div>
+
+                        <div class="row">
+                            <label for="">CPF</label>
+                            <input onblur="formataCPF(this)" oninput="mascara(this)" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                            type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" inputmode="numeric" required>
+                        </div>
+
+
+                        <div class="row">
+                            <label for="">E-mail</label>
+                            <input type="email" name="email" id="email" placeholder="Digite seu E-mail" required>
+                        </div>
+
+                        <div class="row">
+                            <label for="">Cep</label>
+                            <!--usando api viacep-->
+                            <input type="text" name="cep" id="cep" onchange="consultaEndereco()"
+                                placeholder="Digite seu cep" required>
+                        </div>
+                        <div class="row">
+                            <label for="">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" placeholder="Digite a cidade" required>
+                        </div>
+                        <div class="row">
+                            <label for="">Bairro</label>
+                            <!--endereco preenchido automaticamente após preencher o cep-->
+                            <input type="text" name="bairro" id="bairro" placeholder="Digite o bairro" required>
+                        </div>
+                        <div class="row">
+                            <label for="">Logradouro</label>
+                            <!--endereco preenchido automaticamente após preencher o cep-->
+                            <input type="text" name="logradouro" id="logradouro" placeholder="Digite o logradouro" required>
+                        </div>
+                        <div class="row">
+                            <label for="">Número</label>
+                            <!--endereco preenchido automaticamente após preencher o cep-->
+                            <input type="number" min="1" name="numero" id="numero" placeholder="Número" required>
+                        </div>
+
+                        <button type="submit">Ajude o Guará</button>
+                        <!--envia os dados para o email-->
+                        <input type="hidden" name="_subject" value="Novo envio!">
+                        <!--Envia o email com o titulo 'novo envio!'-->
+                        <input type="text" name="_honey" style="display:none">
+                        <!--impede o email de parar na caixa de spam-->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!--desativa o captcha -->
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <div>
+                <img src="assets/img/icone.png" alt="icone-guara">
+                <li>Save-<span class="guara">Guará</span></li>
+            </div>
+            <li>Instituição dedicada a preservação do Lobo-guará.</li>
+        </div>
+     
+        <div>
+            <ul>
+                <li class="contato-titulo">Contato</li>
+                <a href="#"><li>(19) 9 1234-5678</li></a>
+                <a href="#"><li>saveguara@save.com</li></a>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+<script src="assets/js/logica.js"></script>
+<script src="assets/js/animacoes.js"></script>
+
+</html>
